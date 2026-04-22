@@ -60,8 +60,8 @@ class Program
                     var rowOld = oldParamCurrent.Rows.Find(x => x.ID == row.ID);
                     if (row.Cells[i].Value.ToString() != rowOld.Cells[i].Value.ToString())
                     {
-                        Console.WriteLine($"{row.ID} - {row.Cells[i].InternalName} value changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}");
-                        shit2output += $"{row.ID} - {row.Cells[i].InternalName} value changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}\n";
+                        Console.WriteLine($"{row.ID} - {row.Cells[i].InternalName} - changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}");
+                        shit2output += $"{row.ID} - {row.Cells[i].InternalName} - changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}\n";
                     }
                     else
                     {
