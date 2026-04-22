@@ -4,7 +4,7 @@ Program that compares `gameparam.parambnd.dcx` files between different game vers
 ## Usage
 You have to put `oo2core_6_win64.dll` (for Sekiro's game files) in the folder where you have this tool's exe. I didn't want to redistribute it here on GitHub, as it is a part of a proprietary system.
 
-1. Run the exe
+1. Run `SekiroParamCompare.exe`
 2. Enter first patch number
 3. Enter second patch number
 4. Wait for a very long time (you will see any differences printed to the console)
