@@ -18,6 +18,7 @@ class Program
 
         // Get version numbers to compare
         var (ver1, ver2) = inputHandler.GetVersionNumber();
+        bool writeLog = inputHandler.WriteLogFile();
         // Create output file
         fileHandler.CreateOutputFile("Out", $"1_0_{ver1}_to_1_0_{ver2}.txt");
         // Initialize string to write output to - we don't want to constantly write to the file
@@ -30,6 +31,8 @@ class Program
         // Loop does the checking - I have to refactor this mess...
         foreach (var file in newPatch.Files)
         {
+            if (writeLog)
+                File.WriteAllText(@".\Out\log.txt", "");
             string baseFileName = file.Name.Replace(@"N:\NTC\data\Target\INTERROOT_win64\param\GameParam", "");
             if (ignoredParam.Contains(baseFileName))
                 continue;
@@ -59,6 +62,11 @@ class Program
                     {
                         Console.WriteLine($"{row.ID} - {row.Cells[i].InternalName} value changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}");
                         shit2output += $"{row.ID} - {row.Cells[i].InternalName} value changed from {row.Cells[i].Value} to {rowOld.Cells[i].Value}\n";
+                    }
+                    else
+                    {
+                        if (writeLog)
+                            File.AppendAllText(@".\Out\log.txt", $"{row.ID} not changed\n");
                     }
                 }
             }

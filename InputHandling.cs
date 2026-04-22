@@ -47,4 +47,26 @@ class InputHandler
         }
         return (ver1, ver2);
     }
+
+    public bool WriteLogFile()
+    {
+        bool? output = null;
+
+        Console.WriteLine("Do you want to log unchanged entries [y/n]");
+
+        while (output is null)
+        {
+            string tmp = Console.ReadLine() ?? "y";
+            if (tmp == "y")
+            {
+                output = true;
+            }   
+            else if (tmp == "n")
+            {
+                output = false;
+            }
+        }
+
+        return (bool)output;
+    }
 }
