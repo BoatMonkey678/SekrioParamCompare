@@ -13,3 +13,7 @@ You have to put `oo2core_6_win64.dll` (for Sekiro's game files) in the folder wh
 ## Notes
 The comparison process takes a VERY long time. This is because it compares every single value in every single row in every single param type.
 If you are uncertain, check `Out\log.txt` - there rows that are the same are logged (so you can see that the program is comparing, but not detecting any changes).
+You can select if you want to have this log file created or not.
+
+## Credits
+- [SoulsFormatsNEXT](https://github.com/soulsmods/SoulsFormatsNEXT) by SoulsMods organization on GitHub

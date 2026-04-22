@@ -43,7 +43,7 @@ class Program
             // Disable warning - yes the param COULD not exist, but it will unless the user changes something to gameparams in Assets folder
             #pragma warning disable CS8602 // Dereference of a possibly null reference.
             PARAM oldParamCurrent = PARAM.Read(oldPatch.Files.Find(x => x.Name == @$"N:\NTC\data\Target\INTERROOT_win64\param\GameParam{baseFileName}").Bytes);
-
+            File.WriteAllText(@".\Out\log.txt", "");
             foreach (var row in newParamCurrent.Rows)
             {
                 if (oldParamCurrent.Rows.FindAll(x => x.ID == row.ID).Count < 1)
